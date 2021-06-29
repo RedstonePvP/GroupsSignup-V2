@@ -1,12 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signupApp/main.css' %}">
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
     <title>Groups Signup</title>
 </head>
 <body>
-    <h1>Homepage {{name}}</h1>
+    <div class="head">
+        Groups Signup
+        <a href="#" class="infoBtn"><i class="fas fa-info"></i></a>
+    </div>
+
+    <div class="mainCont">
+        <div class="events">
+            <div class="eventCard">
+                <div class="titleBar"><h4>Title</h4><h4>Date/Of</h4></div>
+                <div class="groupOptions">
+                    <a class="linkBtn" href="#">Group 00001</a>
+                    <a class="linkBtn" href="#">Group 2</a>
+                    <a class="linkBtn" href="#">Group 3</a>
+                    <a class="linkBtn" href="#">Group 4</a>
+                    <a class="linkBtn" href="#">Group 5</a>
+                    <a class="linkBtn" href="#">Group 6</a>
+                    <a class="linkBtn" href="#">Group 7</a>
+                </div>
+            </div>
+            <div class="eventCard">
+                <div class="titleBar"><h4>Title</h4><h4>Date/Of</h4></div>
+                <div class="extEvent"><a href="#" class="linkBtn largeBtn">More Info</a></div>
+            </div>
+
+        </div>
+
+        <div class="info">
+            <div class="infoCard">
+                <h2>Groups Info</h2>
+                <ul>
+                    <li>Rule</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
