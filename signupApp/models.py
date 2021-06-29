@@ -26,3 +26,14 @@ class externalEvent(models.Model):
 
     def __str__(self):
         return self.title
+
+class regisration(models.Model):
+    event = models.ForeignKey(event, on_delete=models.CASCADE)
+    group = models.ForeignKey(group, on_delete=models.CASCADE)
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    age = models.IntegerField()
+    pickupName = models.CharField(max_length=100)
+    parentLocation = models.CharField(max_length=100)
+    alergies = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
