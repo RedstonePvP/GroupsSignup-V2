@@ -8,6 +8,7 @@ class group(models.Model):
 
     def __str__(self):
         return self.name
+    
 
 class event(models.Model):
     title = models.CharField(max_length=200)
@@ -17,6 +18,9 @@ class event(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def gDate(self):
+        return self.date
 
 class externalEvent(models.Model):
     title = models.CharField(max_length=200)
@@ -26,6 +30,9 @@ class externalEvent(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def gDate(self):
+        return self.date
 
 class regisration(models.Model):
     event = models.ForeignKey(event, on_delete=models.CASCADE)
@@ -35,5 +42,5 @@ class regisration(models.Model):
     age = models.IntegerField()
     pickupName = models.CharField(max_length=100)
     parentLocation = models.CharField(max_length=100)
-    alergies = models.CharField(max_length=100)
+    allergies = models.CharField(max_length=100)
     address = models.CharField(max_length=100)

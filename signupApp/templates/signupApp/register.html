@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signupApp/main.css' %}">
+    <link rel="stylesheet" href="{% static 'signupApp/register.css' %}">
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+    <title>Groups Signup</title>
+</head>
+<body>
+    <div class="head">
+        Groups Signup
+        <a href="#" class="infoBtn"><i class="fas fa-info"></i></a>
+    </div>
+
+    <div class="mainCard">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_table}}
+            <button type="submit", name="save">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

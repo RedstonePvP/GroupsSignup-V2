@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'signupApp/main.css' %}">
+    <link rel="stylesheet" href="{% static 'signupApp/index.css' %}">
     <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
     <title>Groups Signup</title>
 </head>
@@ -17,22 +18,23 @@
 
     <div class="mainCont">
         <div class="events">
+            {% for event in events %}
+            {% if event.groups %}
             <div class="eventCard">
-                <div class="titleBar"><h4>Title</h4><h4>Date/Of</h4></div>
+                <div class="titleBar"><h4>{{event.title}}</h4><h4>{{event.date}}</h4></div>
                 <div class="groupOptions">
-                    <a class="linkBtn" href="#">Group 00001</a>
-                    <a class="linkBtn" href="#">Group 2</a>
-                    <a class="linkBtn" href="#">Group 3</a>
-                    <a class="linkBtn" href="#">Group 4</a>
-                    <a class="linkBtn" href="#">Group 5</a>
-                    <a class="linkBtn" href="#">Group 6</a>
-                    <a class="linkBtn" href="#">Group 7</a>
+                    {% for group in event.groups.all %}
+                    <a class="linkBtn" href="/register/{{event.id}}/{{group.id}}">{{group.name}}</a>
+                    {% endfor %}
                 </div>
             </div>
+            {% else %}
             <div class="eventCard">
-                <div class="titleBar"><h4>Title</h4><h4>Date/Of</h4></div>
-                <div class="extEvent"><a href="#" class="linkBtn largeBtn">More Info</a></div>
+                <div class="titleBar"><h4>{{event.title}}</h4><h4>{{event.date}}</h4></div>
+                <div class="extEvent"><a href="{{event.url}}" class="linkBtn largeBtn" target="_blank">More Info</a></div>
             </div>
+            {% endif %}
+            {% endfor %}
 
         </div>
 
