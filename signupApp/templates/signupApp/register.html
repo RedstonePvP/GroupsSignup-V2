@@ -17,9 +17,44 @@
     </div>
 
     <div class="mainCard">
+        <div class="cardHead">
+            <h2>Title - Group</h2>
+            <h2>Date/Of</h2>
+        </div>
         <form action="" method="post">
             {% csrf_token %}
-            {{form.as_table}}
+            <div class="inputGroup-221">
+                <div>
+                    <h3>{{form.firstName.label}}</h3>
+                    {{form.firstName}}
+                </div>
+                <div>
+                    <h3>{{form.lastName.label}}</h3>
+                    {{form.lastName}}
+                </div>
+                <div>
+                    <h3>{{form.age.label}}</h3>
+                    {{form.age}}
+                </div>
+                <div>
+                    <h3>{{form.allergies.label}}</h3>
+                    {{form.allergies}}
+                </div>
+            </div>
+            <div class="inputGroup-111">
+                <div>
+                    <h3>{{form.pickupName.label}}</h3>
+                    {{form.pickupName}}
+                </div>
+                <div>
+                    <h3>{{form.parentLocation.label}}</h3>
+                    {{form.parentLocation}}
+                </div>
+                <div>
+                    <h3>{{form.address.label}}</h3>
+                    {{form.address}}
+                </div>
+            </div>
             <button type="submit", name="save">Register</button>
         </form>
     </div>
