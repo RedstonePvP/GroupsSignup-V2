@@ -1,0 +1,8 @@
+.mainCard {
+    margin: 2rem;
+    border: 1px solid;
+    border-color: rgb(46, 46, 46);
+    border-radius: 3px;
+    background-color: #275dc2;
+    color: white;
+}
