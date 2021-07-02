@@ -20,17 +20,17 @@
         <div class="cardHead">
             <h2>
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
-                Confirmation - GROUP NAME</h2>
-            <h2>Date/of</h2>
+                Confirmation - {{register.event.title}}</h2>
+            <h2>{{register.event.date}}</h2>
         </div>
         <div class="splitBody">
             <div>
-                <h2>Full Name</h2>
-                <h2>Age</h2>
-                <h2>Registration ID: id</h2>
+                <h2>{{register.firstName}} {{register.lastName}}</h2>
+                <h2>Age: {{register.age}}</h2>
+                <h2>Registration ID: {{register.pk}}</h2>
             </div>
             <div class="listFlex">
-                <ul><li>Bla</li></ul>
+                <ul><li>INFO</li></ul>
             </div>
         </div>
     </div>

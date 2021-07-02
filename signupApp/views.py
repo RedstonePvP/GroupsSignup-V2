@@ -17,8 +17,8 @@ def indexView(response):
     return render(response, "signupApp/index.html", {"events": allEvents})
 
 def registerView(response, eventID, groupID):
-    evnt = event.objects.get(pk=eventID)
-    grp = group.objects.get(pk=groupID)
+    evnt = event.objects.filter(pk=eventID).first()
+    grp = group.objects.filter(pk=groupID).first()
     if not evnt or not grp or not evnt.active:
         return redirect("index")
     if response.method == "POST":
@@ -30,10 +30,15 @@ def registerView(response, eventID, groupID):
             parentLocation=qf("parentLocation"), allergies=qf("allergies"), 
             address=qf("address"))
             newReg.save()
-            return render(response, "signupApp/confirmation.html")
+            return redirect("confirm", registerID=newReg.id)
     form = registerForm()
     data = {"form": form, "event":evnt, "group":grp}
     return render(response, "signupApp/register.html", data)
 
-def testConf(response):
-    return render(response, "signupApp/confirmation.html")
+def confirmationView(response, registerID):
+    reg = regisration.objects.filter(pk=registerID).first()
+    if not reg or reg.viewed:
+        return redirect("index")
+    reg.viewed = True
+    reg.save()
+    return render(response, "signupApp/confirmation.html", {"register":reg})
