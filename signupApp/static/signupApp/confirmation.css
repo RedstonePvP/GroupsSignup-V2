@@ -1,8 +1,33 @@
-.mainCard {
-    margin: 2rem;
-    border: 1px solid;
-    border-color: rgb(46, 46, 46);
+h2 {
+    margin: 0;
+}
+
+.cardHead {
+    margin-bottom: 0;
+}
+
+.cardHead a {
+    background: white;
+    color: black;
     border-radius: 3px;
-    background-color: #275dc2;
-    color: white;
+    padding: .3rem;
+}
+
+.splitBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+}
+
+.splitBody h2 {
+    margin: 1rem;
+}
+
+.listFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1024px) {
+    .splitBody {grid-template-columns: 1fr;}
 }

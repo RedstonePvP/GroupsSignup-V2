@@ -30,9 +30,10 @@ def registerView(response, eventID, groupID):
             parentLocation=qf("parentLocation"), allergies=qf("allergies"), 
             address=qf("address"))
             newReg.save()
+            return render(response, "signupApp/confirmation.html")
     form = registerForm()
     data = {"form": form, "event":evnt, "group":grp}
     return render(response, "signupApp/register.html", data)
 
 def testConf(response):
-    return render(response, "confirmation.html")
+    return render(response, "signupApp/confirmation.html")

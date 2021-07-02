@@ -44,3 +44,4 @@ class regisration(models.Model):
     parentLocation = models.CharField(max_length=100)
     allergies = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
+    viewed = models.BooleanField(default=False)
