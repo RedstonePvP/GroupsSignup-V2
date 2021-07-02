@@ -18,9 +18,6 @@ class event(models.Model):
 
     def __str__(self):
         return self.title
-    
-    def gDate(self):
-        return self.date
 
 class externalEvent(models.Model):
     title = models.CharField(max_length=200)
@@ -31,9 +28,6 @@ class externalEvent(models.Model):
     def __str__(self):
         return self.title
     
-    def gDate(self):
-        return self.date
-
 class regisration(models.Model):
     event = models.ForeignKey(event, on_delete=models.CASCADE)
     group = models.ForeignKey(group, on_delete=models.CASCADE)
@@ -45,3 +39,7 @@ class regisration(models.Model):
     allergies = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     viewed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.firstName + " " + self.lastName
+

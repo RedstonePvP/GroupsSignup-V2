@@ -29,7 +29,10 @@
     background-color: rgb(39, 144, 243);
     border-radius: 4px;
     padding: .5rem;
+    padding-left: 1rem;
     color: white;
+    border: 5px solid rgb(22, 89, 153); 
+    /* border-left: 1.5rem solid rgb(22, 89, 153); */ /*Possible design*/
 }
 
 .titleBar {
@@ -76,6 +79,7 @@ div.titleBar h4 {
     min-height: 30vh;
     border-radius: 4px;
     color: white;
+    border: 5px solid rgb(16, 56, 94);
 }
 
 div.infoCard h2 {
@@ -92,4 +96,5 @@ div.infoCard ul {
     .mainCont {grid-template-columns: 1fr;}
     .events {grid-template-columns: 1fr;}
     .body {width: 100vw;}
+    .eventCard {border-left: 5px solid rgb(22, 89, 153);}
 }
