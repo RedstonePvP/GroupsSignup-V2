@@ -19,21 +19,19 @@
     <div class="mainCont">
         <div class="events">
             {% for event in events %}
-            {% if event.groups %}
+            
             <div class="eventCard">
-                <div class="titleBar"><h4>{{event.title}}</h4><h4>{{event.date}}</h4></div>
+                <div class="titleBar"><h4>{{event.1}}</h4><h4>{{event.2}}</h4></div>
+                {% if event.0 %}
                 <div class="groupOptions">
-                    {% for group in event.groups.all %}
-                    <a class="linkBtn" href="/register/{{event.id}}/{{group.id}}">{{group.name}}</a>
+                    {% for group in event.3 %}
+                    <a class="linkBtn {{group.2}}" href="/register/{{event.4}}/{{group.0}}">{{group.1}}</a>
                     {% endfor %}
                 </div>
+                {% elif not event.0 %}
+                <div class="extEvent"><a href="{{event.3}}" class="linkBtn largeBtn" target="_blank">More Info</a></div>
+                {% endif %}
             </div>
-            {% else %}
-            <div class="eventCard">
-                <div class="titleBar"><h4>{{event.title}}</h4><h4>{{event.date}}</h4></div>
-                <div class="extEvent"><a href="{{event.url}}" class="linkBtn largeBtn" target="_blank">More Info</a></div>
-            </div>
-            {% endif %}
             {% endfor %}
 
         </div>
@@ -42,7 +40,11 @@
             <div class="infoCard">
                 <h2>Groups Info</h2>
                 <ul>
-                    <li>Rule</li>
+                    <li>Each Group Is Limited to 15 Children</li>
+                    <li>Groups will be held outside in the back of 609, parents may not enter the backyard with their children</li>
+                    <li>During drop off, children will be taken to their group by a group leader. If late a group leader will be there to bring the child to their group.</li>
+                    <li>During pickup a group leader will meet parents one by one to pick up their kids. A Group leader will bring children to their parents. Parents MUST wear a mask during pickup and drop off.</li>
+                    <li>IMPORTANT: No child who comes to groups may leave by themselves even if it is normal practice to do so, a parent MUST pickup their kids and children may not leave the premises otherwise</li>
                 </ul>
             </div>
         </div>

@@ -13,13 +13,30 @@ def indexView(response):
 
     allEvents = list(q1)+list(q2)
     allEvents.sort(key=lambda x: x.date, reverse=False)
-    print(allEvents[0]._meta.db_table)
-    return render(response, "signupApp/index.html", {"events": allEvents})
+    eventsFormated = []
+    for evnt in allEvents:
+        eventsFormated.append([True if evnt._meta.db_table == "signupApp_event" else False
+        , evnt.title, evnt.date])
+        if eventsFormated[-1][0]:
+            eventsFormated[-1].append([])
+            for group in evnt.groups.all():
+                eventsFormated[-1][-1].append([group.id, group.name,
+                "disabled" if regisration.objects.filter(event=evnt, group=group).count() >= group.max else None])
+        else:
+            eventsFormated[-1].append(evnt.url)
+        eventsFormated[-1].append(evnt.id)
+    
+    print(eventsFormated)
+    for ev in eventsFormated:
+        print(ev)
+    return render(response, "signupApp/index.html", {"events": eventsFormated})
 
 def registerView(response, eventID, groupID):
     evnt = event.objects.filter(pk=eventID).first()
     grp = group.objects.filter(pk=groupID).first()
     if not evnt or not grp or not evnt.active:
+        return redirect("index")
+    if regisration.objects.filter(event=evnt, group=grp).count() >= grp.max:
         return redirect("index")
     if response.method == "POST":
         form = registerForm(response.POST)

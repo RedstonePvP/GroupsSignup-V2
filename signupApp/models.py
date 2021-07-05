@@ -15,7 +15,7 @@ class event(models.Model):
     date = models.DateField()
     groups = models.ManyToManyField(group)
     active = models.BooleanField()
-
+    
     def __str__(self):
         return self.title
 

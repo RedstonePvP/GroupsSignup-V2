@@ -72,7 +72,7 @@ div.titleBar h4 {
 }
 
 .infoCard {
-    background-color: rgb(22, 89, 153);
+    background-color: rgb(3, 75, 143);
     margin: 2rem;
     padding: 1rem;
     width: 30wh;
@@ -87,7 +87,16 @@ div.infoCard h2 {
 }
 
 div.infoCard ul {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+}
+
+li {
+    padding-bottom: .8rem;
+}
+
+.disabled {
+    pointer-events: none;
+    color: rgb(112, 110, 110);
 }
 
 @media only screen and (max-width: 1024px) {
