@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    background-color: rgb(11, 82, 213);
+    padding: 0px 1rem .3rem 1rem;
+    margin: 0;
+    color: white;
+    display: flex;
+    align-items:baseline;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.homeLink {
+    text-decoration: none;
+    color: white;
+}
+
+.logoutBtn {
+    background-color: yellow;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.mainCard {
+    margin: 2rem;
+    border: 1px solid;
+    border-color: rgb(46, 46, 46);
+    border-radius: 3px;
+    background-color: #275dc2;
+    color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+    .body {width: 100vw;}
+}
