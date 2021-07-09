@@ -19,24 +19,104 @@ body {
     color: white;
 }
 
-.logoutBtn {
-    background-color: yellow;
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    padding: 2px;
+.gridCont {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    margin: 0;
 }
 
-.mainCard {
-    margin: 2rem;
-    border: 1px solid;
-    border-color: rgb(46, 46, 46);
-    border-radius: 3px;
-    background-color: #275dc2;
+.sideBar {
+    background-color: rgb(11, 82, 213);
+    margin: 0;
+    height: 100vh;
     color: white;
 }
 
+.titleBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.titleBar h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.bodyBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barItem {
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barItem i {
+    margin-right: .5rem;
+}
+
+.barItem p {
+    margin: 0;
+}
+
+.barItem:nth-child(1) {
+    border-top: 2px solid;
+}
+
+.logoutItem {
+    display: none;
+}
+
+.mainBody {
+    padding: 1rem;
+}
+
 @media only screen and (max-width: 1024px) {
-    .body {width: 100vw;}
+    .body {
+        width: 100vw;
+    }
+    .gridCont {
+        grid-template-columns: 1fr;
+        gap: 0;
+        overflow: hidden;
+    }
+    .sideBar {
+        height: 6vh;
+        grid-row: 2;
+    }
+    .titleBar {
+        display: none;
+    }
+    .bodyBar {
+        flex-direction: row;
+    }
+    .barItem p {
+        display: none;
+    }
+    .barItem {
+        border: none;
+    }
+    .barItem:nth-child(1) {
+        border: none;
+    }
+    .mainBody {
+        height: 94vh;
+        overflow-y: scroll;
+        padding: 0rem;
+    }
+    .logoutItem {
+        display: block;
+    }
 }

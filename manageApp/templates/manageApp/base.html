@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'manageApp/main.css' %}">
+    
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+    <title>Groups Signup</title>
+</head>
+<body>
+    <div class="gridCont">
+        <div class="sideBar">
+            <div class="titleBar">
+                <h2>Groups Signup</h2>
+            </div>
+            <div class="bodyBar">
+                <a href="" class="barItem"><i class="fas fa-users"></i> <p>Manage Groups</p></a>
+                <a href="" class="barItem"><i class="fas fa-calendar-day"></i> <p>Manage Events</p></a>
+                <a href="" class="barItem"><i class="fas fa-cogs"></i> <p>Other Settings</p></a>
+                <a href="" class="barItem"><i class="fas fa-sign-out-alt"></i> <p>Logout</p></a>
+            </div>
+        </div>
+        <div class="mainBody">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>
